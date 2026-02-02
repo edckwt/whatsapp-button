@@ -1,32 +1,32 @@
 <?php
 /**
  * @package WhatsApp Button
- * @version 1.1
+ * @version 1.3
  */
 /*
  Plugin Name: WhatsApp Button
  Plugin URI: http://www.edc.org.kw
  Description: By using WhatsApp Button Plugin, you can add a share button for WhatsApp into posts/pages
- Version: 1.2
+ Version: 1.3
  Author: EDC Team
  Author URI: http://www.edc.org.kw
  License: It is Free -_-
 */
 
 function whatsapp_button_plugin_install(){
-	add_option( 'whatsapp_button_size', 3, '', 'yes' ); 
-	add_option( 'whatsapp_button_allow', 1, '', 'yes' ); 
-	add_option( 'whatsapp_button_place', 0, '', 'yes' ); 
-    add_option( 'whatsapp_button_start_element', '<div style="margin:10px 0 10px 0;">', '', 'yes' ); 
-    add_option( 'whatsapp_button_end_element', '</div>', '', 'yes' ); 
+	add_option( 'whatsapp_button_size', 3, '', 'yes' );
+	add_option( 'whatsapp_button_allow', 1, '', 'yes' );
+	add_option( 'whatsapp_button_place', 0, '', 'yes' );
+    add_option( 'whatsapp_button_start_element', '<div style="margin:10px 0 10px 0;">', '', 'yes' );
+    add_option( 'whatsapp_button_end_element', '</div>', '', 'yes' );
 }
-register_activation_hook(__FILE__,'whatsapp_button_plugin_install'); 
+register_activation_hook(__FILE__,'whatsapp_button_plugin_install');
 
 function whatsapp_button_plugin_scripts(){
      wp_register_script('whatsapp_button_plugin_scripts',plugin_dir_url( __FILE__ ).'js/whatsapp-button.js');
      wp_enqueue_script('whatsapp_button_plugin_scripts');
 }
-add_action('wp_enqueue_scripts','whatsapp_button_plugin_scripts'); 
+add_action('wp_enqueue_scripts','whatsapp_button_plugin_scripts');
 
 function whatsapp_button_adminHeader() {
 	echo "<style type=\"text/css\" media=\"screen\">\n";
@@ -148,10 +148,10 @@ $whatsapp_button_start_element = stripslashes(get_option('whatsapp_button_start_
 $whatsapp_button_end_element = stripslashes(get_option('whatsapp_button_end_element'));
 ?>
 	<div id="whatsapp_button" class="submit">
-			<div class="dbx-content">				
+			<div class="dbx-content">
 				<h2><?php echo whatsapp_button_words('title'); ?></h2>
 				<br />
-	
+
 				<form name="sytform" action="" method="post">
 					<input type="hidden" name="submitted" value="1" />
 
@@ -159,12 +159,12 @@ $whatsapp_button_end_element = stripslashes(get_option('whatsapp_button_end_elem
 						<input style="width:70%;" id="whatsapp_button_start_element" type="text" name="whatsapp_button_start_element" value="<?php echo htmlentities($whatsapp_button_start_element); ?>" />
 						<label for="whatsapp_button_start_element"><?php echo whatsapp_button_words('start'); ?></label>
 					</div>
-					
+
 					<div>
 						<input style="width:70%;" id="whatsapp_button_end_element" type="text" name="whatsapp_button_end_element" value="<?php echo htmlentities($whatsapp_button_end_element); ?>" />
 						<label for="whatsapp_button_end_element"><?php echo whatsapp_button_words('end'); ?></label>
 					</div>
-						
+
 					<div>
 						<select name="whatsapp_button_size" id="whatsapp_button_size">
 						<option value="1"<?php echo ( get_option('whatsapp_button_size') == 1 ) ? ' selected="selected"' : ''; ?>><?php echo whatsapp_button_words('small'); ?></option>
@@ -173,7 +173,7 @@ $whatsapp_button_end_element = stripslashes(get_option('whatsapp_button_end_elem
 						</select>
 						<label for="whatsapp_button_size"><?php echo whatsapp_button_words('size'); ?></label>
 					</div>
-						
+
 					<div>
 						<select name="whatsapp_button_allow" id="whatsapp_button_allow">
 						<option value="1"<?php echo ( get_option('whatsapp_button_allow') == 1 ) ? ' selected="selected"' : ''; ?>><?php echo whatsapp_button_words('yes'); ?></option>
@@ -181,7 +181,7 @@ $whatsapp_button_end_element = stripslashes(get_option('whatsapp_button_end_elem
 						</select>
 						<label for="whatsapp_button_allow"><?php echo whatsapp_button_words('allow'); ?></label>
 					</div>
-						
+
 					<div>
 						<select name="whatsapp_button_place" id="whatsapp_button_place">
 						<option value="1"<?php echo ( get_option('whatsapp_button_place') == 1 ) ? ' selected="selected"' : ''; ?>><?php echo whatsapp_button_words('top'); ?></option>
@@ -189,13 +189,13 @@ $whatsapp_button_end_element = stripslashes(get_option('whatsapp_button_end_elem
 						</select>
 						<label for="whatsapp_button_place"><?php echo whatsapp_button_words('place'); ?></label>
 					</div>
-					
+
 					<div style="padding: 1.5em 0;margin: 5px 0;">
 						<input type="submit" name="Submit" value="<?php echo whatsapp_button_words('update_options'); ?>" />
 					</div>
 				</form>
-			</div>   
-						
+			</div>
+
 		</div>
 <?php
 }

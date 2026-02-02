@@ -3,8 +3,8 @@ Contributors: EDC Team
 Donate link: http://www.edc.org.kw
 Tags: WhatsApp, Button, Sharing, Content, EDC
 Requires at least: 3.0
-Tested up to: 4.9.2
-Stable tag: 1.2
+Tested up to: 5.5
+Stable tag: 1.3
 License: Free
 
 By using WhatsApp Button Plugin, you can add a share button for WhatsApp into posts/pages.
@@ -34,6 +34,10 @@ Support: [EDC](http://www.edc.org.kw).
 1. In post
 
 == Changelog ==
+
+= 1.3 =
+
+* Update: Function.
 
 = 1.2 =
 
